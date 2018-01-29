@@ -29,6 +29,22 @@ Student::Student(std::string name, int id) : name(name), id(id), n_grades(0) {
   this->grades = new float[MAX_GRADES];
 }
 
+Student::Student(const Student& s) {
+  this->name = s.name;
+  this->id = s.id;
+  this->n_grades = s.n_grades;
+
+  this->grades = new float[MAX_GRADES];
+  for (int i = 0; i < s.n_grades; i++) {
+    this->grades[i] = s.grades[i];
+  }
+}
+
+Student::~Student() {
+  std::cout << "== In Student destructor" << std::endl;
+  delete[] this->grades;
+}
+
 /*
  * This is the definition of our method to add a new grade to a Student objecy.
  * It checks to make sure the Student still has space in its grades array.

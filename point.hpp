@@ -3,12 +3,14 @@
 
 class Point {
 private:
-    int x;
-    int y;
+  int x;
+  int y;
 
 public:
   Point();
   Point(int x, int y);
+  Point(const Point& p);
+
   void set_xy(int x, int y);
   int get_x();
   int get_y();
