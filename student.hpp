@@ -17,6 +17,8 @@ public:
 
   void add_grade(float grade);
   void print_student();
+
+  void operator=(const Student& s);
 };
 
 #endif

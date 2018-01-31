@@ -73,3 +73,15 @@ void Student::print_student() {
   }
   std::cout << std::endl;
 }
+
+void Student::operator=(const Student& s) {
+  this->name = s.name;
+  this->id = s.id;
+  this->n_grades = s.n_grades;
+
+  // delete[] this->grades;
+  // this->grades = new float[MAX_GRADES];
+  for (int i = 0; i < s.n_grades; i++) {
+    this->grades[i] = s.grades[i];
+  }
+}
